@@ -1,4 +1,4 @@
-package com.example.videoplayer
+package com.example.minitv
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

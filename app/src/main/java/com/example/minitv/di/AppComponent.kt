@@ -4,7 +4,7 @@ import com.example.minitv.presentation.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class, RepositoryModule::class])
 @Singleton
 interface AppComponent {
 

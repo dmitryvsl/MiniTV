@@ -1,15 +1,17 @@
-package com.example.minitv.presentation
+package com.example.minitv.presentation.main_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.minitv.R
 import com.example.minitv.domain.model.TvProgram
+import com.example.minitv.presentation.App
 import com.example.minitv.presentation.extensions.getTextAsset
 import com.example.minitv.presentation.utils.GsonUtils
 import com.google.android.material.snackbar.Snackbar
+import androidx.activity.viewModels
+import com.example.minitv.domain.use_cases.UseCase
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -21,6 +23,14 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var gsonUtils: Provider<GsonUtils>
+
+    // нужен для инжекта в ViewModel
+    @Inject
+    lateinit var useCase: UseCase
+
+    private val viewModel: MainActivityViewModel by viewModels {
+        MainActivityViewModel.provideFactory(useCase)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun findViews(){
+    private fun findViews() {
         rootView = findViewById(R.id.rootView)
     }
 

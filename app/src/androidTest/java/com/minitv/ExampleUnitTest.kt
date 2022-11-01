@@ -1,4 +1,4 @@
-package com.example.minitv
+package com.minitv
 
 import org.junit.Test
 

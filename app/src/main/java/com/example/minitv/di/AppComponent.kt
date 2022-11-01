@@ -1,6 +1,6 @@
 package com.example.minitv.di
 
-import com.example.minitv.presentation.MainActivity
+import com.example.minitv.presentation.main_activity.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 

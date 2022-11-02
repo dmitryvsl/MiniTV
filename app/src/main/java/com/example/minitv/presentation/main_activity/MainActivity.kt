@@ -2,11 +2,8 @@ package com.example.minitv.presentation.main_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import android.view.View.OnClickListener
-import android.widget.Button
 import android.widget.FrameLayout
 import com.example.minitv.R
 import com.example.minitv.domain.model.TvProgram
@@ -92,9 +89,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun openAsset(path: String): String? {
-        val mediaList = getTextAsset(path)
-        Log.d("MainActivity", "openAsset: $mediaList")
-        return mediaList
+        return getTextAsset(path)
     }
 
     private fun showSnackbar(message: String) {
@@ -109,8 +104,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         surfaceHolderCallback.clearResources()
+        super.onDestroy()
     }
 
 }

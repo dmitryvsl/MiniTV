@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">VideoPlayer</string>
+    <string name="app_name">Mini TV</string>
     <string name="file_not_found">File not found</string>
-    <string name="skip_to_end_of_video">Skip to end of video</string>
-    <string name="skip_to_end_of_playlist">Skip to end of playlist</string>
 </resources>

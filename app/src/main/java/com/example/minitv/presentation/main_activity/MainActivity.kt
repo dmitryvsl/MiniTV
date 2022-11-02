@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         App.component.inject(this)
 
         initViews()
+        rootView.keepScreenOn = true
 
         val mediaList = openAsset(ASSET_PATH_MEDIA_LIST)
 

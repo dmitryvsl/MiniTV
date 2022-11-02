@@ -30,8 +30,6 @@ const val ASSET_PATH_MEDIA_LIST = VIDEO_ASSET_BASE_PATH + "medialist.json"
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var skipVideoBtn: Button
-    private lateinit var skipPlaylistBtn: Button
     private lateinit var rootView: FrameLayout
     private lateinit var surfaceView: SurfaceView
     private lateinit var surfaceHolder: SurfaceHolder
@@ -61,12 +59,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private val onSkipVideoClickListener =
-        OnClickListener { surfaceHolderCallback.skipToEndOfVideo() }
-
-    private val onSkipPlayListClickListener =
-        OnClickListener { surfaceHolderCallback.skipToEndOfPlayList() }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -76,9 +68,6 @@ class MainActivity : AppCompatActivity() {
         App.component.inject(this)
 
         initViews()
-
-        skipVideoBtn.setOnClickListener(onSkipVideoClickListener)
-        skipPlaylistBtn.setOnClickListener(onSkipPlayListClickListener)
 
         val mediaList = openAsset(ASSET_PATH_MEDIA_LIST)
 
@@ -117,8 +106,6 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         rootView = findViewById(R.id.rootView)
         surfaceView = findViewById(R.id.videoPlayer)
-        skipVideoBtn = findViewById(R.id.skip_video)
-        skipPlaylistBtn = findViewById(R.id.skip_playlist)
     }
 
     override fun onDestroy() {
